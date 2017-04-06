@@ -1,5 +1,6 @@
 package qyzspringmvc.controller;
 
+import model.MenuTreeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.servlet.ModelAndView;
 import qyzspringmvc.service.AdminMenuService;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -48,7 +52,7 @@ public class AdminIndexController {
 	 * 1、参数为树的根节点数量,现在只是虚构的数据,实际应该是从数据库中抽取出来的
 	 * 2、取当前操作人工号
 	 *
-	 *
+	 *asd
 	 * @param request
 	 * @return
 	 * @see [相关类/方法](可选)
@@ -58,14 +62,9 @@ public class AdminIndexController {
 	public ModelAndView index(HttpServletRequest request) {
 		List<MenuTreeModel> menuTreeList = adminMenuService.findAllParentMenu();
 		request.setAttribute("menuList", menuTreeList);
-		// 取当前操作人工号
-		String userId = request.getUserPrincipal().getName();
-		String userStoreId=qrcodeService.getStoreId(userId);
-		HttpSession  session=request.getSession();
-		session.setAttribute("storeid", userStoreId);
+
 
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("userId", userId);
 		mav.setViewName("index");
 		return mav;
 	}

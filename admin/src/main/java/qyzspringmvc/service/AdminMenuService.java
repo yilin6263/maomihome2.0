@@ -3,6 +3,12 @@ package qyzspringmvc.service;
 
 
 
+import model.MenuTreeModel;
+import model.SimpleJsonTree;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -23,10 +29,11 @@ import java.util.TreeSet;
 /**
  * Created by 17020406 on 2017/3/27.
  */
+@Service
 public class AdminMenuService {
 
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AdminMenuServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(AdminMenuService.class);
 
 	public List<MenuTreeModel> findAllMenu() {
 		LOGGER.info("[findAllJsonMenu]-->started");
@@ -83,7 +90,7 @@ public class AdminMenuService {
 
 	public List<MenuTreeModel> getTreeNodeData(boolean isAll, String parentId) {
 		List<MenuTreeModel> treeDataLst = new ArrayList<MenuTreeModel>();
-		InputStream input = AdminMenuServiceImpl.class.getClassLoader().getResourceAsStream("conf/tree-data.properties");
+		InputStream input = AdminMenuService.class.getClassLoader().getResourceAsStream("conf/tree-data.properties");
 		Properties properties = new Properties();
 
 		try {
