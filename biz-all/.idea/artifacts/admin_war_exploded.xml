@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="admin:war exploded">
-    <output-path>$PROJECT_DIR$/../admin/target/qyz</output-path>
+    <output-path>$PROJECT_DIR$/../admin/target/admin</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -25,10 +25,18 @@
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.12" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.6.2" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
+          <element id="archive" name="biz-all-0.0.1.jar">
+            <element id="module-output" name="biz-all" />
+          </element>
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.6.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/../admin/target/qyz/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/../admin/target/admin/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="admin/web/Web" />
     </root>
